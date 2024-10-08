@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPTOR NEXUS - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/mnt/data/file-wNU5vVPmqjqqpw0bMQCIahG6'), url('disaster_image.jpg');
+            background-size: cover, cover;
+            background-position: center, center;
+            background-repeat: no-repeat, no-repeat;
+            color: white;
+        }
+        .login-container, .dashboard {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            display: inline-block;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .introduction {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .role {
+            background-color: rgba(255, 99, 71, 0.7);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        h3 {
+            color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginContainer">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="8" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"><br>
+            <input type="submit" value="Get Update">
+        </form>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <div class="header">
+            <h1>RAPTOR NEXUS - Dashboard</h1>
+        </div>
+        <div class="sidebar">
+            <a href="#home">Home</a>
+            <a href="#introduction">Introduction</a>
+            <a href="#role">Role</a>
+            <a href="#settings">Settings</a>
+            <a href="#logout">Logout</a>
+        </div>
+        <div class="content">
+            <h2>Welcome to RAPTOR NEXUS</h2>
+            <div class="introduction" id="introduction">
+                <h3>Introduction to RAPTOR NEXUS</h3>
+                <p>RAPTOR NEXUS is a cutting-edge disaster management platform combining IoT, AI, and AR/VR technologies for real-time monitoring, early warning systems, and hazard mapping. This system is designed to deliver actionable insights to emergency responders and vulnerable communities, ensuring proactive disaster management.</p>
+                <h3>About the System</h3>
+                <p>The system integrates weather sensors, satellite data, and AI algorithms for predictive analysis. By utilizing AR and VR, it offers immersive hazard mapping, enhancing disaster preparedness in remote and urban areas alike. RAPTOR NEXUS aims to provide critical alerts and simulations, helping authorities make faster decisions.</p>
+
+                <h3>RAPTOR NEXUS Full Form:</h3>
+                <p>
+                    <strong>RAPTOR:</strong> Real-time Automated Prediction, Tracking, and Operational Response<br>
+                    <strong>NEXUS:</strong> Networked Emergency X-ploration and Unified Services
+                </p>
+            </div>
+            
+            <div class="role" id="role">
+                <h3>Roles in the System</h3>
+                <h4>1. Team</h4>
+                <p>Login with team ID and password. Password must be 8 characters long and include uppercase, lowercase, and digits.</p>
+
+                <h4>2. Customer</h4>
+                <p>Name: <input type="text" name="customer_name"><br>
+                   Place: <input type="text" name="customer_place"><br>
+                   Location ID (GPS): <input type="text" name="gps_location"></p>
+
+                <h4>3. Government/NGO's</h4>
+                <p>Authorities managing disaster responses will be provided with real-time data to coordinate effective action.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginContainer = document.getElementById('loginContainer');
+        const dashboard = document.getElementById('dashboard');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Simulate a successful login
+            loginContainer.style.display = 'none';
+            dashboard.style.display = 'block';
+        });
+
+        // Initially, show the login form
+        loginContainer.style.display = 'block';
+    </script>
+
+</body>
+</html>
